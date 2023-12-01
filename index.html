@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventskalender</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="icon" href="icon.png" type="image/png" sizes="16x16">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color">
+</head>
+
+<body>
+    <video autoplay muted loop id="video">
+        <source src="bg.mp4" type="video/mp4">
+    </video>
+    <div id="muted" onclick="mute()">
+        <image id="mute" src="mute.png" class="muteBtn">
+        <image id="volume" src="volume.png" class="muteBtn"></image>
+    </div>
+    <div id="center">
+        <div class="container">
+            <div class="firstBox">Für KOKE</div>
+            <div class="box" id="1">1</div>
+            <div class="box" id="2">2</div>
+            <div class="box" id="3">3</div>
+            <div class="box" id="4">4</div>
+            <div class="box" id="5">5</div>
+            <div class="box" id="6">6</div>
+            <div class="box" id="7">7</div>
+            <div class="box" id="8">8</div>
+            <div class="box" id="9">9</div>
+            <div class="box" id="10">10</div>
+            <div class="box" id="11">11</div>
+            <div class="box" id="12">12</div>
+            <div class="box" id="13">13</div>
+            <div class="box" id="14">14</div>
+            <div class="box" id="15">15</div>
+            <div class="box" id="16">16</div>
+            <div class="box" id="17">17</div>
+            <div class="box" id="18">18</div>
+            <div class="box" id="19">19</div>
+            <div class="box" id="20">20</div>
+            <div class="box" id="21">21</div>
+            <div class="box" id="22">22</div>
+            <div class="box" id="23">23</div>
+            <div class="box" id="24">24</div>
+            <div class="firstBox">2023</div>
+        </div>
+    </div>
+    <div id="centerOpen">
+        <div id="openBox">
+            <div id="titel" class="titel">Test</div>
+            <div id="text" class="text">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </div>
+            <br>
+            <br>
+            <div class="closeBtn" onclick="closeBox()">Zurück</div>
+        </div>
+    </div>
+    <script src="/app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                })
+                .catch(function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+        }
+    </script>
+</body>
+
+</html>
